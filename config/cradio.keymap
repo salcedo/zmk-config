@@ -9,11 +9,20 @@
 #include <dt-bindings/zmk/bt.h>
 
 &mt {
-  flavor = "hold-preferred";
+  flavor = "tap-preferred";
   tapping_term_ms = <200>;
 };
 
 / { 
+  chosen {
+    zmk,battery = &vbatt;
+  };
+
+  vbatt: vbatt {
+    compatible = "zmk,battery-nrf-vddh";
+    label = "VBATT";
+  }
+
   keymap {
     compatible = "zmk,keymap";
 
@@ -26,7 +35,7 @@
         // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
           &mt LSHFT SEMI   &mt LCTRL Q   &mt LALT J    &mt LGUI K    &kp X             &lt 3 B       &kp M         &mt RALT W    &mt RCTRL V   &mt RSHFT Z
         // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                                       &sl 1         &sl 2             &kp ENTER     &kp SPACE
+                                                       &mo 1         &mo 2             &kp ENTER     &kp SPACE
         //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
       >;
     };
