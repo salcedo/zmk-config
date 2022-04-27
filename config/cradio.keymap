@@ -21,7 +21,7 @@
   vbatt: vbatt {
     compatible = "zmk,battery-nrf-vddh";
     label = "VBATT";
-  }
+  };
 
   keymap {
     compatible = "zmk,keymap";
